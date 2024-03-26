@@ -1,0 +1,435 @@
+<html>
+
+<head>
+	<style>
+		.customTexte {
+			font-family: 'Gloria Hallelujah', cursive;
+			align-items: center;
+			margin: 30;
+			align-self: center;
+			font-size: 2em;
+			font-weight: bold;
+			justify-content: center;
+			display: flex;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			background: whitesmoke;
+			font-family: 'Gloria Hallelujah', cursive;
+
+		}
+
+		.customList {
+			font-family: 'Gloria Hallelujah', cursive;
+			font-size: 1.4rem;
+			width: 100%;
+			margin: 0;
+			padding: 1rem;
+			display: grid;
+			place-items: center;
+		}
+
+		ul {
+			list-style-position: inside;
+			width: 600px;
+			max-width: 100%;
+			background: white;
+			box-shadow: 0.25rem 0.25rem 0.75rem rgb(0 0 0 / 0.15);
+			padding: 0;
+			margin: 0;
+			border-radius: 0.1rem;
+		}
+
+		li {
+			padding: 0 0 0 1rem;
+		}
+
+		li:not(:last-child) {
+			border-bottom: 1px solid lightblue;
+		}
+
+		li:first-child {
+			margin-top: 1rem;
+		}
+
+		li:last-child {
+			margin-bottom: 1rem;
+		}
+
+		li:hover {
+			background-color: lightcoral;
+		}
+
+		::marker {
+			content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='14' viewBox='0 0 50 50'%3E%3Cpath d='M46.4 16.2c-2.3-2.3-5.4-3.5-8.4-4.5-.5-.2-1.1-.3-1.6-.5-1.6-1.6-3.7-2.8-6.2-3.2-1-.2-1.9.1-2.5.6-.9-.3-1.8-.6-2.7-.8-3.2-1-6.4-1.8-9.5-.1-1 .5-1.9 1.2-2.7 2-6.4 1.4-11.7 5-12.4 12.7C0 27 1.9 31.5 4.9 34.9c.1.6.2 1.1.4 1.7 1 3.2 3.3 5.7 6.7 6.5 2.7.6 5.4-.2 7.9-1.2 3.3.4 6.7.3 9.9 0 6.5-.7 13.3-2.8 17.1-8.5 3.6-5.2 4-12.6-.5-17.2zm-17.3.9c2.1.4 4 1.7 4.7 3.8 0 .5-.1 1.1-.2 1.6-.3 1.4-.8 2.6-1.6 3.7-.7.2-1.5.1-2.3-.4-.8-.4-1.6-1-2.2-1.6-.4-.4-1.2-1.7-1.6-1.9 3.4 1.3 5.1-3 3.2-5.2zm-11.6 9.7c.2-1.9 1.1-3.9 2.3-5.5-.4 2.1.3 4.2 1.7 6 1.3 1.7 3.1 3.2 5 4.2-.2.1-.4.2-.6.4-.1 0-.1.1-.2.1-3.9.2-8.7-.8-8.2-5.2zm-6.4 3.1c.1.3.1.7.2 1 .2.6.4 1.2.7 1.8-.4-.2-.7-.5-1-.7.1-.8.1-1.4.1-2.1zm31.2-1.3c-.9 1.7-2.1 3.1-3.7 4.1 2-2.1 3.4-4.7 4-7.6.2-.7.3-1.4.3-2.1.6 1.5.5 3.3-.6 5.6z'/%3E%3C/svg%3E") ' ';
+		}
+
+		li:nth-child(3n)::marker {
+			content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='14' viewBox='0 0 50 50'%3E%3Cpath d='M46.5 12.5c-.4-1.1-1.3-1.8-2.2-2-4.2-4-11.6-4.3-17.1-4.1-6.9.3-13.9 2.1-19.4 6.5C2 17.5-2.4 25.7 2.5 32.6c2.2 3.2 5.5 4.9 9 5.5 3.3 1.7 6.7 3.3 10.2 4.4 7.8 2.3 17 1.6 23.2-4.3 7.3-7 4.8-17.3 1.6-25.7zm-20.2 2.7c.6 0 1.3 0 1.8.2 1.1.4 1.7 1.3 2 2.3-1-1.2-2.4-2.1-3.8-2.5zm-1.4 6.6c.9.9 1.3 2.2-.2 2.3-2 .2-1.1-1.9.2-2.3zm-11.8 9.8c-.6-.3-2.9-1.1-3.2-1.8-.2-.5 1.4-3.1 2.1-4.2.3.5.7 1 1.2 1.4 0 .3.1.6.2.8.5 1.9 1.5 3.1 2.9 4h-.2c-.8.1-1.6.1-2.5-.1-.2 0-.3 0-.5-.1zM24 36.4c1.6-.7 3-1.5 4.3-2.5.8.2 1.7.3 2.5.5 2.5.4 5.2.9 7.7.6-.9.6-2 1.1-3 1.4-3.9 1.3-7.7 1-11.5 0z'/%3E%3C/svg%3E") ' ';
+		}
+
+		li:nth-child(3n - 1)::marker {
+			content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='14' viewBox='0 0 50 50'%3E%3Cpath d='M48.3 23.7c-1-9.9-9.9-15.6-18.8-17.8-8.2-2.1-18.8-2.6-24.6 4.8C.6 16.2 1 23.6 4.3 29.3c-.5 1-.8 2-1 3-.6 4 2 7.6 5.1 10 5.9 4.4 14 4.2 19.6-.4 1.5 0 2.9-.2 4.4-.5 1.8 0 3.5 0 5.3-.1 2.3-.1 3.5-1.9 3.5-3.7 4.5-3.3 7.7-8.2 7.1-13.9zM9.1 17.8c1.1-4.1 4.9-5.8 8.8-6.1.9-.1 1.9-.1 2.9-.1-3.2 1.6-6.3 4.6-8 7.4-.1.1-.1.2-.2.3-1.1.9-2.1 1.9-3 2.9-.2.2-.4.4-.5.6-.4-1.7-.5-3.3 0-5z'/%3E%3C/svg%3E") ' ';
+		}
+
+
+		*,
+		*::after,
+		*::before {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.customToogle {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+
+		}
+
+		:root {
+			--container: 16rem;
+			--height: 5.125rem;
+			--ball: 4.25rem;
+		}
+
+		[type="checkbox"] {
+			appearance: none;
+			display: none;
+		}
+
+		.checkbox__container {
+			scale: 1.325;
+			display: grid;
+			inline-size: var(--container);
+			block-size: var(--height);
+			border-radius: 100vh;
+			background: linear-gradient(45deg, hsl(39, 100%, 80%), hsl(300, 47%, 85%));
+			position: relative;
+			box-shadow: 0px 1.9px 3.2px rgba(0, 0, 0, 0.25);
+			outline: 1px solid hsl(0, 0%, 60%, 0.2);
+		}
+
+		.label-for-toggle {
+			cursor: pointer;
+			isolation: isolate;
+			display: grid;
+			place-content: center start;
+			width: inherit;
+			border-radius: inherit;
+			border: 16px solid hsl(200, 0%, 100%, 0.825);
+			box-shadow: 0 2px 2px 1px #0003 inset, inset 0 -1px 1.5px 1px #fff7;
+		}
+
+		.ball {
+			place-self: center start;
+			position: absolute;
+			left: 0.5rem;
+			mix-blend-mode: color;
+			display: grid;
+			place-content: center;
+			width: var(--ball);
+			aspect-ratio: 1;
+			background: linear-gradient(135deg, #3ddbd9, #8da2ec, #fe95ff);
+			border-radius: 50%;
+			transition: transform 500ms cubic-bezier(0.4, 0.47, 0.66, 0.86);
+			box-shadow: 0 0 0.75rem 0 #0004;
+		}
+
+		.ball i {
+			font-size: 2.5em;
+			color: #fff;
+			-webkit-text-stroke: 1px #0006;
+		}
+
+		:checked~.checkbox__container .ball {
+			transform: translateX(calc(var(--container) - var(--ball) - 1rem)) rotate(540deg);
+		}
+
+
+
+
+		.card {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			transition: 0.3s;
+
+			border-radius: 5px;
+			padding: 10px;
+			margin: 5px;
+
+		}
+
+		.card:hover {
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+		}
+
+		img {
+			border-radius: 5px 5px 0 0;
+		}
+
+		.container {
+			padding: 2px 16px;
+			text-align: -webkit-center;
+		}
+
+
+		.productList {
+			width: 90vw;
+			display: flex;
+		}
+
+		.btn {
+			background-color: DodgerBlue;
+			border: none;
+			color: white;
+			padding: 8px 10px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		/* Darker background on mouse-over */
+		.btn:hover {
+			background-color: RoyalBlue;
+		}
+
+
+		.displaynone {
+			display: none;
+		  }
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<div class="customToogle">
+		<div class="toggle displaynone" id="toggleContainer">
+			<input type="checkbox" name="checkbox" id="input-toggle" class="input-toggle" onclick="changeMode()" />
+			<div class="checkbox__container">
+				<label for="input-toggle" class="label-for-toggle">
+					<span class="ball arrow">
+						<i class="fas fa-arrow-right"></i>
+					</span>
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="customTexte">
+		Vous devez acheter : de la farine, 3 oeufs, du beurre, du chocolat, des chips, 2 bananes.
+	</div>
+	<div>
+		<div class="productList" id="normal">
+			<div class="card">
+				<div class="container">
+					<h4><b>Beurre</b></h4>
+					<button class="btn" onclick=addElt(['Beurre'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>1 banane</b></h4>
+					<button class="btn" onclick=addElt(['Banane'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>Huile</b></h4>
+					<button class="btn" onclick=addElt(['Huile'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>Chocolat</b></h4>
+					<button class="btn" onclick=addElt(['Chocolat'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>Farine</b></h4>
+					<button class="btn" onclick=addElt(['Farine'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>Pistaches</b></h4>
+					<button class="btn" onclick=addElt(['Pistaches'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>Chips</b></h4>
+					<button class="btn" onclick=addElt(['Chips'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="container">
+					<h4><b>Soda</b></h4>
+					<button class="btn" onclick=addElt(['Soda'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>1 oeuf</b></h4>
+					<button class="btn" onclick=addElt(['Oeuf'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+		</div>
+
+		<div class="productList displaynone" id="packed" >
+			<div class="card">
+				<div class="container">
+					<h4><b>Pack Gateau:</b></h4>
+					<p>Farine, beurre et 2 oeufs</p>
+					<button class="btn" onclick=addElt(['Farine','Beurre','Oeuf','Oeuf'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>Pack Apero:</b></h4> 
+					<p>Chips, Soda et Chocolat</p>
+					<button class="btn" onclick=addElt(['Chips','Soda','Chocolat'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>Pack gras:</b></h4>
+					<p>Farine, beurre et chips</p>
+					<button class="btn" onclick=addElt(['Farine','Beurre','Chips'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>Pack Utile:</b></h4>
+					<p>Chips, 1 banane et 1 oeuf</p>
+					<button class="btn" onclick=addElt(['Chips','Banane','Oeuf'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>Pack Frigo:</b></h4>
+					<p>beurre et 1 oeuf</p>
+					<button class="btn" onclick=addElt(['Beurre','Oeuf'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>Pack salé:</b></h4>
+					<p>1 Oeuf, beurre et chips</p>
+					<button class="btn" onclick=addElt(['Oeuf','Beurre','Chips'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>Pack Gateau au chocolat:</b></h4>
+					<p>Farine, beurre, du chololat et 2 oeufs</p>
+					<button class="btn" onclick=addElt(['Farine','Beurre','Chocolat','Oeuf','Oeuf'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>Pack breton:</b></h4>
+					<p>beurre, 1 oeuf, sucre</p>
+					<button class="btn" onclick=addElt(['Beurre','Sucre','Oeuf'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container">
+					<h4><b>Pack Gourmand:</b></h4>
+					<p>1 banane et du chocolat</p>
+					<button class="btn" onclick=addElt(['Chocolat','Banane'])><i class="fa fa-cart-plus"></i></button>
+				</div>
+			</div>
+		</div>
+		<div class="customList">
+			<ul id="list">
+
+			</ul>
+		</div>
+	</div>
+</body>
+
+
+<script>
+	var isNormal = !(localStorage.getItem("nbclick")=="false");
+	console.log(isNormal)
+	document.getElementById("input-toggle").checked=!isNormal;
+
+	const urlParams = new URLSearchParams(window.location.search);
+
+	if(urlParams.get('showswitch')!=undefined)
+	{
+		document.getElementById("toggleContainer").classList.remove("displaynone");
+
+	}else{
+		const packed = urlParams.get('packed');
+		isNormal=packed==undefined
+	}
+	if(isNormal)
+	{
+		document.getElementById("normal").classList.remove("displaynone");
+		document.getElementById("packed").classList.add("displaynone");
+	}else{
+		document.getElementById("normal").classList.add("displaynone");
+		document.getElementById("packed").classList.remove("displaynone");
+	}
+	var cart = [];
+
+	function addElt(lst) {
+		cart.push(...lst);
+		console.log(cart);
+
+		recreateList();
+		if(cart.length==9)
+		{
+			if(cart.filter(x=>x=="Oeuf").length==3&&
+			cart.filter(x=>x=="Farine").length==1&&
+			cart.filter(x=>x=="Beurre").length==1&&
+			cart.filter(x=>x=="Chocolat").length==1&&
+			cart.filter(x=>x=="Chips").length==1&&
+			cart.filter(x=>x=="Banane").length==2
+			){
+				alert('Bravo');
+				window.location.reload();
+			}
+		}
+	}
+
+	function recreateList() {
+		list.innerHTML = "";
+		var ul = document.getElementById("list");
+		ul.innerHTML = "";
+
+		for (var txt of cart) {
+			var li = document.createElement("li");
+			li.appendChild(document.createTextNode(txt));
+			li.setAttribute("id", txt); // added line
+
+			ul.appendChild(li);
+		}
+	}
+
+	function changeMode()
+	{
+		isNormal=!isNormal;
+		if(isNormal)
+		{
+			document.getElementById("normal").classList.remove("displaynone");
+			document.getElementById("packed").classList.add("displaynone");
+		}else{
+			document.getElementById("normal").classList.add("displaynone");
+			document.getElementById("packed").classList.remove("displaynone");
+		}
+		localStorage.setItem("nbclick",isNormal);
+	}
+
+</script>
+
+</html>
